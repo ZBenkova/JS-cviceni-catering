@@ -38,15 +38,16 @@ const flavourMama= (numberOfPeople) => {
 } 
 
 const createEvent = (nameOfEvent, numberOfPeople, catering) => {
+    const cateringString = catering(numberOfPeople)
     const message = `Udalost ` +
         nameOfEvent +
         ` s ` +
-        catering(numberOfPeople)
+        cateringString
 
     return message
 }
 
-const resultMessage = createEvent("inaugurace prezidenta", 23, flavourMama)
-
 let paragraph = document.querySelector("#paragraph")
-paragraph.innerHTML += resultMessage
+paragraph.innerHTML += createEvent("inaugurace prezidenta", 23, flavourMama)
+
+console.log(createEvent("inaugurace prezidenta", 23, flavourMama))

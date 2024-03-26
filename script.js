@@ -1,38 +1,52 @@
 const justFood = (numberOfPeople) => {
     const price = 1090
-    let message = document.querySelector("#paragraph")
     let result = price * numberOfPeople
-    message = `<h2>Vaše objednávka jídla Just Food pro ` +
+
+    const message = `Catering od Just Food pro ` +
     numberOfPeople +
-    ` osob Vás vyjde na ` +
+    ` lidi za ` +
     result +
-    ` korun. </h2>`
-    document.body.innerHTML=message
+    ` kc.`
+
+    return message
 } 
 
 const yourMama= (numberOfPeople) => {
     const price = 3450
-    let message = document.querySelector("#paragraph")
     let result = price * numberOfPeople
-    message = `<h2>Vaše objednávka jídla Your Mama pro ` +
+
+    const message = `Catering od Your Mama pro ` +
     numberOfPeople +
-    ` osob Vás vyjde na ` +
+    ` lidi za ` +
     result +
-    ` korun. </h2>`
-    document.body.innerHTML+=message
+    ` kc.`
+
+    return message
 } 
 
 const flavourMama= (numberOfPeople) => {
     const price = 5500
-    let message = document.querySelector("#paragraph")
     let result = price * numberOfPeople
-    message = `<h2>Vaše objednávka jídla Flavour Mama pro ` +
+
+    const message = `Catering od Flavour Mama pro ` +
     numberOfPeople +
-    ` osob Vás vyjde na ` +
+    ` lidi za ` +
     result +
-    ` korun. </h2>`
-    document.body.innerHTML+=message
+    ` kc.`
+    
+    return message
 } 
 
-justFood(6)
-flavourMama(70)
+const createEvent = (nameOfEvent, numberOfPeople, catering) => {
+    const message = `Udalost ` +
+        nameOfEvent +
+        ` s ` +
+        catering(numberOfPeople)
+
+    return message
+}
+
+const resultMessage = createEvent("inaugurace prezidenta", 23, flavourMama)
+
+let paragraph = document.querySelector("#paragraph")
+paragraph.innerHTML += resultMessage
